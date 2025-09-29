@@ -28,8 +28,21 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div *ngFor="let empleado of empleados; let i = index">
+      <div *ngFor="let empleado of empleados; let i = index" [ngStyle]="{'background-color': i % 2 === 0 ? '#f0f0f0' : 'white'}">
         {{ (i+1) }} - {{ empleado.nombre}} {{empleado.apellido}} {{ empleado.cargo}} ${{empleado.salario}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div [ngStyle]="{backgroundColor: empleados[0].estado ?
+        fontWeight: empleados[0].cargo === '' ? 'bold' : 'normal', padding: '10px', borderRadius: '5px'}">
       </div>
     </div>
   </div>

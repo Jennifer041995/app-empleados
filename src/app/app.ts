@@ -16,16 +16,20 @@ export class App {
   cuadroApellido: string = "";
   cuadroCargo: string = "";
   cuadroSalario: number = 0;
+  estado: boolean = true;
 
   empleados: empleado[] = [
-    new empleado("Josue", "Mejia", "Jefe", 99999.99),
-    new empleado("Jared", "Garay", "Director", 1000),
-    new empleado("Juan", "Pérez", "Administrativo", 800),
-    new empleado("Maria", "Sorto", "Colaboradora", 500)
+    new empleado("Josue", "Mejia", "Jefe", 99999.99, true),
+    new empleado("Jared", "Garay", "Director", 1000, false),
+    new empleado("Juan", "Pérez", "Administrativo", 800, true),
+    new empleado("Maria", "Sorto", "Colaboradora", 500, true )
   ];
+i: any;
+empleado: any;
+fontWeight: any;
 
   agregar_empleado(){
-    let miEmpleado = new empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+    let miEmpleado = new empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario, this.estado);
 
     this.empleados.push(miEmpleado);
   }
