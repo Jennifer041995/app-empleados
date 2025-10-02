@@ -15,10 +15,10 @@ interface Producto {
 })
 export class ListaProductosComponent {
   productos: Producto[] = [
+    { nombre: 'Monitor', stock: 2 },
     { nombre: 'Laptop', stock: 3 },
     { nombre: 'Mouse', stock: 12 },
     { nombre: 'Teclado', stock: 5 },
-    { nombre: 'Monitor', stock: 2 },
     { nombre: 'Impresora', stock: 8 },
     { nombre: 'USB', stock: 15 },
     { nombre: 'Tablet', stock: 4 },
