@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-contacto-component',
@@ -7,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './contacto-component.css'
 })
 export class ContactoComponent {
+  constructor(private router: Router){
 
+  }
+  volverHome(){
+    this.router.navigate(['']);
+  }
 }
