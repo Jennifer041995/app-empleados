@@ -8,11 +8,12 @@ import { ServicioEmpleado } from "./servicio-empleado";
 
 export class EmpleadosService {
     empleados: empleado[] = [
-        new empleado("Josue", "Mejia", "Jefe", 99999.99, true),
-        new empleado("Jared", "Garay", "Director", 1000, false),
-        new empleado("Juan", "Pérez", "Administrativo", 800, true),
-        new empleado("Maria", "Sorto", "Colaboradora", 500, false)
+        new empleado("Josue", "Mejia", "Jefe", 99999.99),
+        new empleado("Jared", "Garay", "Director", 1000),
+        new empleado("Juan", "Pérez", "Administrativo", 800),
+        new empleado("Maria", "Sorto", "Colaboradora", 500)
       ];
+  agregar_empleado: any;
 
       constructor(private servicioMensaje: ServicioEmpleado){}
       
