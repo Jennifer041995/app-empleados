@@ -16,7 +16,7 @@ export class Lab4InventarioComponent {
   constructor(private calculadoraImpuestosService: CalculadoraImpuestosService) {}
 
   calcularImpuestos() {
-    // Validación de que todos los campos estén llenos
+    // Validación de que todos los campos estén llenos 
     if (!this.nombreProducto || !this.precioBase || !this.categoria) {
       alert('Por favor, complete todos los campos del formulario antes de calcular.');
       return;
@@ -32,7 +32,7 @@ export class Lab4InventarioComponent {
           `Monto Total del IVA: $${resultado.montoIVA.toFixed(2)}\n` +
           `Precio Final (Total a Pagar): $${resultado.precioFinal.toFixed(2)}`);
 
-    // Limpiar los campos del formulario
+    // Limpia los campos del formulario
     this.nombreProducto = '';
     this.precioBase = 0;
     this.categoria = '';

@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class CalculadoraImpuestosService {
   calcular(precioBase: number, categoria: string) {
-    let tasaIVA = 0;
+    let tasaIVA = 0; 
 
-    switch (categoria.toLowerCase()) {
+    switch (categoria) {
       case 'electrónica':
         tasaIVA = 13;
         break;
@@ -16,10 +16,11 @@ export class CalculadoraImpuestosService {
         break;
       case 'libros':
         tasaIVA = 0;
-        break;
-      default:
-        alert('Categoría no válida. Por favor, seleccione una categoría correcta.');
-        throw new Error('Categoría no válida');
+        //break;
+      //default:
+        //alert('Categoría no válida. Por favor, seleccione una categoría correcta.');
+            // Lanza manualmente una excepción cuando ocurre una condición excepcional en el código
+       // throw new Error('Categoría no válida');
     }
 
     const montoIVA = (precioBase * tasaIVA) / 100;
