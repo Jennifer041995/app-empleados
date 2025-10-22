@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { empleado } from '../empleado.model';
-import { CaracteristicasEmpleadoC } from "../caracteristicas-empleado-c/caracteristicas-empleado-c";
+import { CaracteristicasEmpleadosC } from "../caracteristicas-empleados-c/caracteristicas-empleados-c";
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-empleado-hijo-c',
-  imports: [CommonModule, CaracteristicasEmpleadoC, RouterModule],
+  imports: [CommonModule, CaracteristicasEmpleadosC, RouterModule],
   templateUrl: './empleado-hijo-c.html',
   styleUrl: './empleado-hijo-c.css'
 })

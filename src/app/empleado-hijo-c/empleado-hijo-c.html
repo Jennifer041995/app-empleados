@@ -14,7 +14,7 @@
                     </a>
                 <!--</a>-->
             </div>
-            <app-caracteristicas-empleado-c (caracteristicasEmpleados)="agregar_caracteristica($event)"></app-caracteristicas-empleado-c>
+            <app-caracteristicas-empleados-c (caracteristicasEmpleados)="agregar_caracteristica($any($event))"></app-caracteristicas-empleados-c>
             <ul style="list-style: none;">
                 <li *ngFor="let caracteristica of array_caracteristicas">
                     {{caracteristica}}
