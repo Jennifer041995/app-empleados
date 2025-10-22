@@ -22,6 +22,7 @@ export class Lab4InventarioComponent {
       return;
     }
 
+    // llama al método calcular del servicio calculadora-impuesto.service.ts
     const resultado = this.calculadoraImpuestosService.calcular(this.precioBase, this.categoria);
     alert(`Detalle del Producto\n` +
           `Nombre del Producto: ${this.nombreProducto}\n` +

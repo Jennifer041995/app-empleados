@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { empleado } from '../empleado.model';
 import { ServicioEmpleado } from '../servicio-empleado';
-import { EmpleadosService } from '../empleados.service';
+import { empleadosService } from '../empleados.service';
 import { EmpleadoHijoC } from '../empleado-hijo-c/empleado-hijo-c';
-EmpleadosService
+empleadosService
 
 
 @Component({
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   empleados: empleado[];
   
 
-  constructor(private miServicio: ServicioEmpleado, private empleadosService: EmpleadosService){
+  constructor(private miServicio: ServicioEmpleado, private empleadosService: empleadosService){
     //this.empleados = this.empleadosService.empleados;
   }
 

@@ -1,14 +1,20 @@
 
-<ul style="list-style: none;">
-    <li *ngFor="let caracteristica of array_caracteristicas">{{ caracteristica }}</li>
-</ul>
-<app-empleado-hijo-c></app-empleado-hijo-c><div class="container">
+<div class="container">
     <div class="row">
         <div class="col">
             <div>
-                {{ (indice+1) }} - {{ empleadoLista.nombre}} {{empleadoLista.apellido}} {{ empleadoLista.cargo}} ${{empleadoLista.salario}}
+                <!--<a [routerLink]="['actualiza', indice]">-->
+                    {{ (indice+1) }} - {{ empleadoLista.nombre}} {{empleadoLista.apellido}} {{ empleadoLista.cargo}}
+                    ${{empleadoLista.salario}} 
+                    <a [routerLink]="['actualiza', indice]" [queryParams]="{accion: 1}">
+                        Actualizar
+                    </a>
+                    <a [routerLink]="['actualiza', indice]" [queryParams]="{accion: 2}">
+                        Eliminar
+                    </a>
+                <!--</a>-->
             </div>
-            <app-caracteristicas-empleados-c (CaracteristicasEmpleados)="agregar_caracteristica($event)"></app-caracteristicas-empleados-c>
+            <app-caracteristicas-empleado-c (caracteristicasEmpleados)="agregar_caracteristica($event)"></app-caracteristicas-empleado-c>
             <ul style="list-style: none;">
                 <li *ngFor="let caracteristica of array_caracteristicas">
                     {{caracteristica}}
