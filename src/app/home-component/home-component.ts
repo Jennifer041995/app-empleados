@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   cuadroCargo: string = "";
   cuadroSalario: number = 0;
   empleados: empleado[];
+  eliminar: any;
   
 
   constructor(private miServicio: ServicioEmpleado, private empleadosService: empleadosService){
