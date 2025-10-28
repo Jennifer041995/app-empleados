@@ -15,7 +15,7 @@ export class Lab4InventarioComponent {
 
   constructor(private calculadoraImpuestosService: CalculadoraImpuestosService) {}
 
-  calcularImpuestos() {
+  calcularImpuesto() {
     // Validación de que todos los campos estén llenos 
     if (!this.nombreProducto || !this.precioBase || !this.categoria) {
       alert('Por favor, complete todos los campos del formulario antes de calcular.');
