@@ -5,18 +5,18 @@ import { QuienesComponent } from './quienes-component/quienes-component';
 import { ContactoComponent } from './contacto-component/contacto-component';
 import { ActualizaComponent } from './actualiza-component/actualiza-component';
 import { ErrorPersonalizado } from './error-personalizado/error-personalizado';
-//import { Parcial2 } from './parcial2/parcial2';
-//import { Parcial22 } from './parcial2.2/parcial2.2';
-//import { Parcial21 } from './parcial2.1/parcial2.1';
-//import { Parcial23 } from './parcial2.3/parcial2.3';
-//import { ErroresPersonalizados } from './errores-personalizados/errores-personalizados';
+import { RepasoInicio } from './repaso-inicio/repaso-inicio';
+import { Repaso1 } from './repaso1/repaso1';
+import { Repaso2 } from './repaso2/repaso2';
+import { Repaso3 } from './repaso3/repaso3';
+
 
 export const routes: Routes = [
-    {path: "", component: HomeComponent},
-    {path: "proyectos", component: ProyectosComponent},
-    {path: "quienes", component: QuienesComponent},
-    {path: "contacto",  component: ContactoComponent},
-    {path: "actualiza/:id", component: ActualizaComponent},
+    {path: "", component: RepasoInicio},
+    {path: "repaso1", component: Repaso1},
+    {path: "repaso2", component: Repaso2},
+    {path: "repaso3",  component: Repaso3},
+    //{path: "actualiza/:id", component: ActualizaComponent},
     {path: "**", component: ErrorPersonalizado},
 
     //{path: "parcial2", component: HomeComponent},
