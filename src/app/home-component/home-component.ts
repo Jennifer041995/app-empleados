@@ -29,7 +29,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void{
-    this.empleados = this.empleadosService.empleados;
+    /*this.empleados = this.empleadosService.empleados;*/
+    this.empleadosService.obtener_empleados().subscribe((misEmpleados: empleado[]) => {
+      console.log(misEmpleados);
+      this.empleados = Object.values(misEmpleados);
+    });
   }
 
   agregar_empleado(){

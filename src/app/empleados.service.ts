@@ -7,12 +7,12 @@ import { DataServices } from "./data.services";
   providedIn: 'root'
 })
 export class empleadosService{
-    empleados: empleado[] = [
+   /*empleados: empleado[] = [
         new empleado("Josue", "Mejia", "Jefe", 99999.99),
         new empleado("Jared", "Garay", "Director", 1000),
         new empleado("Juan", "Pérez", "Administrativo", 800),
         new empleado("Maria", "Sorto", "Colaboradora", 500)
-    ];
+    ];*/
 
     constructor(private servicioMensaje: ServicioEmpleado, private dataServices: DataServices){
 
@@ -40,4 +40,12 @@ export class empleadosService{
     eliminar_empleado(indice: number){
         this.empleados.splice(indice, 1);
     }
+
+    obtener_empleados(){
+        return this.dataServices.cargar_empleados();
+        /* nos devuelve un objeto que se llama observable, estos permiten operaciones 
+        asincronas en segundo plano y actualiza sin hacer un serlect*/
+    }
+
+
 }
