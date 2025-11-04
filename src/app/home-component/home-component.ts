@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
   cuadroCargo: string = "";
   cuadroSalario: number = 0;
   empleados: empleado[];
-  eliminar: any;
   
 
   constructor(private miServicio: ServicioEmpleado, private empleadosService: empleadosService){
@@ -29,11 +28,15 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void{
-    /*this.empleados = this.empleadosService.empleados;*/
-    this.empleadosService.obtener_empleados().subscribe((misEmpleados: empleado[]) => {
-      console.log(misEmpleados);
-      this.empleados = Object.values(misEmpleados);
-    });
+    //this.empleados = this.empleadosService.empleados;
+    //console.log(this.empleadosService.obtener_empleados());
+    this.empleadosService.obtener_empleados().subscribe(
+      misEmpleados =>{
+        console.log(misEmpleados);
+        this.empleados=Object.values(misEmpleados);
+        this.empleadosService.set_empleados(this.empleados);
+      }
+    );
   }
 
   agregar_empleado(){

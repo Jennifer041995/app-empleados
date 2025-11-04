@@ -22,9 +22,6 @@ export class DataServices {
     cargar_empleados() {
         return this.httpClient.get('https://misempleados25-default-rtdb.firebaseio.com/datos.json');
     }
-
-    set_empleados(misempleados: empleado[]) {
-        
 }
 
 
