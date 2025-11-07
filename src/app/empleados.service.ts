@@ -38,7 +38,7 @@ export class empleadosService{
         empleadoModificado.salario = empleado.salario;
         
         this.dataService.actualizar_empleado(indice, empleado);
-    }
+    }  
 
     eliminar_empleado(indice: number){
         this.empleados.splice(indice, 1);
