@@ -14,8 +14,8 @@ export class DataServices {
         this.httpClient.post('https://misempleados25-default-rtdb.firebaseio.com/datos.json', empleados).subscribe(
             response => {
                 console.log("Se han guardado los empleados: " + response);
-            (error: string) => console.log("Error al guardar empleados: " + error);
-            }
+            },
+            error => console.log("Error al guardar empleados: " + error)
         );
     }
 
@@ -27,7 +27,7 @@ export class DataServices {
         let url = 'https://misempleados25-default-rtdb.firebaseio.com/datos/' + indice + '.json';
         this.httpClient.put(url, empleado).subscribe(
             response => console.log("Se ha actualizado el empleado: " + response),
-            (error: string) => console.log("Error al actualizar empleado: " + error)
+            error => console.log("Error al actualizar empleado: " + error)
         );
 }
 
