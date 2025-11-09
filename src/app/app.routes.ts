@@ -2,8 +2,6 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home-component/home-component';
 import { ProyectosComponent } from './proyectos-component/proyectos-component';
 import { QuienesComponent } from './quienes-component/quienes-component';
-import { ContactoComponent } from './contacto-component/contacto-component';
-import { ActualizaComponent } from './actualiza-component/actualiza-component';
 import { ErrorPersonalizado } from './error-personalizado/error-personalizado';
 import { RepasoInicio } from './repaso-inicio/repaso-inicio';
 import { Repaso1 } from './repaso1/repaso1';
