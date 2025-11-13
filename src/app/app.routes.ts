@@ -7,15 +7,24 @@ import { RepasoInicio } from './repaso-inicio/repaso-inicio';
 import { Repaso1 } from './repaso1/repaso1';
 import { Repaso2 } from './repaso2/repaso2';
 import { Repaso3 } from './repaso3/repaso3';
+import { ContactoComponent } from './contacto-component/contacto-component';
+import { ActualizaComponent } from './actualiza-component/actualiza-component';
 
 
 export const routes: Routes = [
-    {path: "", component: RepasoInicio},
-    {path: "repaso1", component: Repaso1},
-    {path: "repaso2", component: Repaso2},
-    {path: "repaso3",  component: Repaso3},
+    {path: "", component: HomeComponent},
+    {path: "proyectos", component: ProyectosComponent},
+    {path: "quienes", component: QuienesComponent},
+    {path: "contacto",  component: ContactoComponent},
+    {path: "actualiza/:id", component: ActualizaComponent},
+    {path: "**", component: ErrorPersonalizado}
+
+   // {path: "", component: RepasoInicio},
+    //{path: "repaso1", component: Repaso1},
+    //{path: "repaso2", component: Repaso2},
+    //{path: "repaso3",  component: Repaso3},
     //{path: "actualiza/:id", component: ActualizaComponent},
-    {path: "**", component: ErrorPersonalizado},
+    //{path: "**", component: ErrorPersonalizado},
 
     //{path: "parcial2", component: HomeComponent},
     //{path: "parcial2.1", component: Parcial21},
