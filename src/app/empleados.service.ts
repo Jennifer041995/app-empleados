@@ -30,18 +30,29 @@ export class empleadosService{
         return empleado;
     }
 
-    actualizar_empleado(indice: number, empleado: empleado){
+    async actualizar_empleado(indice: number, empleado: empleado): Promise<void> {
         let empleadoModificado = this.empleados[indice];
         empleadoModificado.nombre = empleado.nombre;
         empleadoModificado.apellido = empleado.apellido;
         empleadoModificado.cargo = empleado.cargo;
         empleadoModificado.salario = empleado.salario;
         
-        this.dataService.actualizar_empleado(indice, empleado);
+       // this.dataService.actualizar_empleado(indice, empleado);
+
+       try {
+        //awit hace que espere a que se complete la promesa
+           await this.dataService.actualizar_empleado(indice, empleado);
+           console.log("Empleado actualizado correctamente.");
+       } catch (error) {
+           console.log("Error al actualizar el empleado: " + error);
+           throw error; //para saber que el error fue capturado 
+       }
     }  
 
     eliminar_empleado(indice: number){
         this.empleados.splice(indice, 1);
+        this.dataService.eliminar_empleado(indice);
+        this.dataService.guardar_empleado(this.empleados);
     }
 
     obtener_empleados(){

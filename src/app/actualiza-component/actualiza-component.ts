@@ -57,10 +57,13 @@ export class ActualizaComponent implements OnInit {
     this.volverHome();
   }*/
 
-  actualizar_empleado() {
+ async actualizar_empleado() {
+  let operacionGuardada : Promise <void> | undefined;
+
     if (this.accion == 1) {
       let miEmpleado = new empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
 
+      operacionGuardada = this.empleadosService.actualizar_empleado(this.indice, miEmpleado);
       //this.empleados.push(miEmpleado);
       //this.miServicio.muestra_mensaje("Empleado registrado con el nombre: " + miEmpleado.nombre);
       this.empleadosService.actualizar_empleado(this.indice, miEmpleado);
@@ -68,8 +71,18 @@ export class ActualizaComponent implements OnInit {
       this.empleadosService.eliminar_empleado(this.indice);
     }
 
-    setTimeout(() => {
-      this.volverHome();
-    }, 1000);
+    //setTimeout(() => {
+      //this.volverHome();
+    //}, 1000); //al pasar los milisegundos a 5000 la utilizacion es mala ya que tarda mucho en volver
+
+    try {
+      if (operacionGuardada) {
+        await operacionGuardada;
+        this.volverHome();
+      }
+  }catch (error) {
+      console.log("Error en la operacion: " + error);
   }
+  }
+
 }
