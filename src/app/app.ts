@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 /*import { FormsModule } from '@angular/forms';*/
 import { RouterOutlet } from '@angular/router';
+import firebase from 'firebase/compat/app';
 //import { Lab4InventarioComponent } from "./lab4inventario/lab4inventario.component";
 
 /*import { empleado } from './empleado.model';
@@ -15,6 +16,11 @@ import { empleadosService } from './empleados.service';*/
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App  {
-  
+export class App implements OnInit {
+  ngOnInit(): void {
+    firebase.initializeApp({
+      apiKey: "AIzaSyD_WRR2vXV45bWdXE8E9h6WYMndXVoTdEs",
+      authDomain: "misempleados25.firebaseapp.com",
+    })
+  }
 }
